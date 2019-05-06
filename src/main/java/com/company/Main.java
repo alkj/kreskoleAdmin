@@ -70,9 +70,7 @@ public class Main {
             System.out.println("3 efterfulgt at studienummer for at se tilbud fra en køreskole");
             System.out.println("'slet tilbud' efterfulgt af [tilbuds id] for at slette tilbud");
             System.out.println("'slet køreskole' efterfulgt af [køreskole id] for at slette køreskole og alle deres tilbud");
-
-            String valg = "3 s165477";
-
+            String valg = "";
             try {
                 valg = bufferedReader.readLine();
             } catch (IOException e) {
