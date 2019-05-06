@@ -91,7 +91,7 @@ public class Main {
             } else if (valg.startsWith("slet ")){
                 try {
                     slet(valg);
-                } catch (IOException e) {
+                } catch (Exception e) {
                     System.out.println("fejl");
                 }
             }
@@ -109,7 +109,6 @@ public class Main {
             if (bufferedReader.readLine().equals("j")){
                 connection.sletTilbud(brugernavn, kodeord, valg);
             }
-            System.out.println(connection.tilbudFraKøreskole(this.brugernavn, this.kodeord, valg));
 
         }
         if (valg.startsWith("køreskole")){
