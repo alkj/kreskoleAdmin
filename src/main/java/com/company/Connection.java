@@ -24,7 +24,7 @@ public class Connection {
     public void connect(){
         try {
             //ki = (KøreskolePriserInterface) Naming.lookup("rmi://dist.saluton.dk:5478/koereskolepriser");
-            ki = (KøreskolePriserInterface) Naming.lookup("rmi://localhost:1235/koereskolepriser");
+            ki = (KøreskolePriserInterface) Naming.lookup("rmi://localhost:5500/koereskolepriser");
 
         } catch ( Exception e) {
             e.printStackTrace();
