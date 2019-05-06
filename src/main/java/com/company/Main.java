@@ -4,6 +4,7 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.rmi.RemoteException;
 
 /**
  * program til at vedligeholdelse af administrative dele af databasen
@@ -19,12 +20,12 @@ public class Main {
     String kodeord = "";
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         new Main().run();
     }
 
 
-    private void run() {
+    private void run() throws RemoteException {
 
         System.out.println("Velkommen til Administrationsmodulet til køreskolen");
         System.out.println("Skriv brugernavn og kode for at fortsætte ");
@@ -44,11 +45,10 @@ public class Main {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            if (stringBruger.equals("s165477") && stringKode.equals("kodekode")||stringBruger.equals("s175132") && stringKode.equals("DS2019")||stringBruger.equals("") && stringKode.equals("")) {
-                connection.connect();
-                this.brugernavn="s165477";
-                this.kodeord="kodekode";
+            connection.connect();
+            if (connection.ki.logIndAdmin(stringBruger, stringKode)) {
+                this.brugernavn=stringBruger;
+                this.kodeord=stringKode;
                 loggetind();
                 break;
             }
