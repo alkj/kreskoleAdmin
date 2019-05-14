@@ -60,6 +60,8 @@ public class Main {
 
     private void loggetind() {
         System.out.println("velkommen til Admin af køreskolepriser.");
+        connection.brugernavn=brugernavn;
+        connection.kodeord=kodeord;
 
         while (true){
 
