@@ -17,14 +17,16 @@ public class Connection {
 
     Display display = new Display();
 
-    String brugernavn = "s165477";
-    String kodeord = "kodekode";
+    String brugernavn = "";
+    String kodeord = "";
 
 
     public void connect(){
         try {
-            //ki = (KøreskolePriserInterface) Naming.lookup("rmi://dist.saluton.dk:5478/koereskolepriser");
-            ki = (KøreskolePriserInterface) Naming.lookup("rmi://localhost:5500/koereskolepriser");
+//            ki = (KøreskolePriserInterface) Naming.lookup("rmi://localhost:5500/koereskolepriser");
+//            ki = (KøreskolePriserInterface) Naming.lookup("rmi://dist.saluton.dk:5478/koereskolepriser");
+            ki = (KøreskolePriserInterface) Naming.lookup("rmi://dist.saluton.dk:5500/koereskolepriser");
+//            ki = (KøreskolePriserInterface) Naming.lookup("rmi://dist.saluton.dk:1299/koereskolepriser");
 
         } catch ( Exception e) {
             e.printStackTrace();
